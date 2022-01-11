@@ -11,7 +11,7 @@ const ProductDetail = () => {
     console.log(id);
     const [data, setData] = useState([])
     useEffect(() => {
-        fetch("http://localhost:5000/explore")
+        fetch("https://fierce-sierra-47875.herokuapp.com/explore")
             .then(res => res.json())
             .then(data => setData(data))
     }, [])
@@ -33,7 +33,7 @@ const ProductDetail = () => {
                     </div>
                     <button onClick={() => {
                         productDetail.email = user.email
-                        fetch('http://localhost:5000/cart', {
+                        fetch('https://fierce-sierra-47875.herokuapp.com/cart', {
                             method: "POST",
                             headers: {
                                 'Content-Type': 'application/json',

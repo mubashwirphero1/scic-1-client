@@ -12,6 +12,7 @@ import ProductDetail from './Pages/Static/Products/Product Detail/ProductDetail'
 import AuthProvider from './ContextAPI/AuthProvider';
 import PrivateRoute from './Pages/Private/PrivateRoute';
 import Cart from './Pages/Static/Cart/Cart';
+import Contact from './Pages/Static/Contact/Contact';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/products/:id" element={<ProductDetail />} />
           </Route>
           <Route path="/cart" element={<Cart />} />
+          <Route path="contact" element={<Contact/>} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

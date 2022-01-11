@@ -1,15 +1,19 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
+import useAuth from '../../../Hooks/useAuth';
 import Footer from '../../Shared/Footer/Footer';
 import Navigation from '../../Shared/Navigation/Navigation';
 import SingleProduct from './Single Product/SingleProduct';
 
 const Products = () => {
+    const { loading, setLoading } = useAuth()
     const [data, setData] = useState([])
     useEffect(() => {
-        fetch("http://localhost:5000/explore")
+        setLoading(true)
+        fetch("https://fierce-sierra-47875.herokuapp.com/explore")
             .then(res => res.json())
             .then(data => setData(data))
+            .finally(() => setLoading(false))
     }, [])
     console.log(data);
     return (

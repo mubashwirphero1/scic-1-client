@@ -8,7 +8,7 @@ const Cart = () => {
     const { user } = useAuth()
     const [cart, setCart] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/cart`)
+        fetch(`https://fierce-sierra-47875.herokuapp.com/cart`)
             .then(res => res.json())
             .then(data => setCart(data))
     }, []);
